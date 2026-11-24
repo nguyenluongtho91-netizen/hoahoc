@@ -195,33 +195,12 @@
         window.addEventListener('load', function () { setTimeout(check, 1200); });
     })();
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,700;1,900&amp;display=swap&amp;subset=vietnamese" rel="stylesheet">
     <style>
-        /* [CODE47] Font giao diện: UTM HelvetIns (dùng bản cài trên máy nếu có; nếu không sẽ tải file font đặt cùng thư mục với index.html).
-           Tên file font: UTMHelvetIns.ttf (hoặc .woff2 / .woff), bản đậm: UTMHelvetIns-Bold.ttf - đặt cùng thư mục hoặc trong thư mục fonts/ */
-        @font-face {
-            font-family: 'UTM HelvetIns';
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-            src: local('UTM HelvetIns'), local('UTM-HelvetIns'), local('UTMHelvetIns'), local('UTM Helvet Ins'), local('UTMHelvetIns-Regular'), local('UTM HelvetIns Regular'),
-                 url('UTMHelvetIns.woff2') format('woff2'), url('UTMHelvetIns.woff') format('woff'), url('UTMHelvetIns.ttf') format('truetype'),
-                 url('fonts/UTMHelvetIns.woff2') format('woff2'), url('fonts/UTMHelvetIns.woff') format('woff'), url('fonts/UTMHelvetIns.ttf') format('truetype');
-        }
-        @font-face {
-            font-family: 'UTM HelvetIns';
-            font-style: normal;
-            font-weight: 700;
-            font-display: swap;
-            src: local('UTM HelvetIns Bold'), local('UTM-HelvetIns-Bold'), local('UTMHelvetIns-Bold'),
-                 url('UTMHelvetIns-Bold.woff2') format('woff2'), url('UTMHelvetIns-Bold.woff') format('woff'), url('UTMHelvetIns-Bold.ttf') format('truetype'),
-                 url('fonts/UTMHelvetIns-Bold.woff2') format('woff2'), url('fonts/UTMHelvetIns-Bold.woff') format('woff'), url('fonts/UTMHelvetIns-Bold.ttf') format('truetype'),
-                 local('UTM HelvetIns'), url('UTMHelvetIns.ttf') format('truetype'), url('fonts/UTMHelvetIns.ttf') format('truetype');
-        }
-
+        /* Font giao diện chính: Roboto (Google Fonts) */
         * {
             box-sizing: border-box;
-            font-family: 'UTM HelvetIns', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
             font-synthesis: weight style;
             -webkit-font-smoothing: antialiased;
             -webkit-tap-highlight-color: transparent;
@@ -271,6 +250,7 @@
             padding: 0;
             width: 100vw;
             height: 100vh;
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
             width: 100dvw;
             height: 100dvh;
             overflow: hidden;
@@ -436,7 +416,7 @@
         body.layout-portrait:not(.printing-a4) #class-modal, body.layout-portrait:not(.printing-a4) #library-modal { max-width: 100vw; }
 
         /* [CODE20] Chống gian lận: không cho in / bôi đen nội dung đề khi đang làm bài */
-        @media print { body.exam-locked #app-wrapper { display: none !important; } body.exam-locked::after { content: 'Không được in / chụp nội dung bài thi.'; display: block; font: 700 20px 'UTM HelvetIns', Arial, sans-serif; padding: 40px; } }
+        @media print { body.exam-locked #app-wrapper { display: none !important; } body.exam-locked::after { content: 'Không được in / chụp nội dung bài thi.'; display: block; font: 700 20px 'Roboto', Arial, sans-serif; padding: 40px; } }
         body.exam-locked :is(#questions-container, .qc-live) { -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
         body.exam-locked :is(#questions-container, .qc-live) input { user-select: text; -webkit-user-select: text; }
         #ac-overlay { position: fixed; inset: 0; z-index: 99999; background: rgba(15, 23, 42, .96); color: #fff; display: none; align-items: center; justify-content: center; text-align: center; padding: 24px; }
@@ -1274,7 +1254,7 @@
         }
         /* (2) CHƠI TRỰC TIẾP trên máy tính: giao diện dùng UTM HelvetIns (kế thừa quy tắc chung); chỉ câu hỏi, lời dẫn, đáp án, hướng dẫn giải là Roboto (do lớp .qc-live đảm nhiệm). Điện thoại: Roboto toàn bộ (quy tắc media ở trên). */
         #lv-t .katex, #lv-d .katex, #lv-s .katex { font-family: 'Roboto', KaTeX_Main, 'Times New Roman', serif !important; }
-        .qc-live .lv-note, .qc-live .lv-ok-btn, .qc-live .sol-toggle-btn { font-family: 'UTM HelvetIns', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+        .qc-live .lv-note, .qc-live .lv-ok-btn, .qc-live .sol-toggle-btn { font-family: 'Roboto', sans-serif; }
         @media (max-width: 1024px), (pointer: coarse) { .qc-live .lv-note, .qc-live .lv-ok-btn, .qc-live .sol-toggle-btn { font-family: 'Roboto', Arial, sans-serif; } }
 
         /* (3) Giao diện học sinh chơi trực tiếp: đồng bộ với màn hình làm bài về nhà */
@@ -1414,7 +1394,7 @@ window.SAKB = {
   box-sizing:border-box;display:grid;grid-template-rows:auto 1fr auto;gap:22px;min-height:100%;color:var(--c83-ink);
   background:linear-gradient(180deg,#eef4ff 0%,#e6effd 100%);border-radius:18px;padding:18px}
 #code83-home *,#code83-home *::before,#code83-home *::after{box-sizing:border-box}
-#code83-home,#code83-home *{font-family:'UTM HelvetIns','Helvetica Neue',Helvetica,Arial,sans-serif !important}
+#code83-home,#code83-home *{font-family:'Roboto',sans-serif !important}
 #code83-home h3{margin:0;font-weight:800;font-size:19px;letter-spacing:.01em;text-transform:uppercase;color:var(--c83-ink)}
 :where(#code83-home button){cursor:pointer;border:0;background:none;color:inherit;text-align:inherit;padding:0;font:inherit}
 #code83-home button:focus-visible{outline:3px solid #7aa7ff;outline-offset:2px;border-radius:10px}
@@ -21822,7 +21802,7 @@ function enHeader(doc, cfg, ver, withAns, total) {
         '.mx-fs-w .mx-pv{max-height:none;overflow:visible;border:0;margin:0;padding:0;font-family:Roboto,Arial,sans-serif !important;font-size:19px;line-height:1.65;color:#0f172a}' +
         '.mx-fs-w .mx-pv *{font-family:inherit}.mx-fs-w .mx-pv .po{min-width:48%}' +
         '.mx-fs-w .mx-key{font-family:Roboto,Arial,sans-serif;font-size:17px;margin-top:18px;padding-top:12px;border-top:2px dashed #c7d2fe}' +
-        '.mx-fs-h h2,.mx-fs-w .mx-pv h4,.mx-fs-w .mx-key>b{font-family:\'UTM HelvetIns\',\'Helvetica Neue\',Helvetica,Arial,sans-serif !important}.mx-fs-w .mx-pv h4{font-size:20.5px;letter-spacing:.02em}' +
+        '.mx-fs-h h2,.mx-fs-w .mx-pv h4,.mx-fs-w .mx-key>b{font-family:\'Roboto\',sans-serif !important}.mx-fs-w .mx-pv h4{font-size:20.5px;letter-spacing:.02em}' +
         '@media (max-width:640px){.mx-fs-w{padding:14px 12px}.mx-fs-w .mx-pv{font-size:17.5px}.mx-fs-w .mx-pv .po{min-width:100%}}' +
         '.mx-prog{position:absolute;inset:0;z-index:5;background:rgba(15,23,42,.6);display:flex;align-items:center;justify-content:center}' +
         '.mx-prog>div{background:#fff;border-radius:18px;padding:22px 30px;font-weight:900;color:#3730a3;text-align:center;max-width:90%}' +
@@ -23498,8 +23478,8 @@ try { if (!isStu() && !localStorage.getItem(LSK0 + '_c137')) { st.lessons = {}; 
                 '.bk-no{flex:0 0 28px;height:28px;border-radius:50%;background:#ea580c;color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:13px}.bk-ln{flex:1 1 200px;min-width:0;font-weight:700;color:#0f172a}.bk-ln em{color:#15803d;font-style:normal;font-size:13px}' +
                 '.bk-i{border:0;background:transparent;cursor:pointer;font-size:16px;padding:2px 4px}body.layout-portrait .bk-ls .bk-go,body.layout-portrait .bk-ls .bk-up,body.layout-portrait .bk-ls .bk-vw{flex:1 0 100%}' +
                 '#bank-modal .bk-view .qc-live,#bank-modal .bk-view .qc-live *:not(.katex):not(.katex *),#bank-modal .bk-view .bk-ta2,#bank-modal .bk-view .bk-ei,#bank-modal .bk-view .bk-pv,#bank-modal .bk-view .bk-pv *:not(.katex):not(.katex *){font-family:Roboto,Arial,"Helvetica Neue",sans-serif !important}' +
-                '#bank-modal#bank-modal .bk-view .bk-tools,#bank-modal#bank-modal .bk-view .bk-tools *,#bank-modal#bank-modal .bk-view .bk-b,#bank-modal#bank-modal .bk-view .bk-lvh,#bank-modal#bank-modal .bk-view .bk-lvh *,#bank-modal#bank-modal .bk-view .bk-lve,#bank-modal#bank-modal .bk-view .bk-flt,#bank-modal#bank-modal .bk-view .bk-flt *,#bank-modal#bank-modal .bk-view .bk-ctb,#bank-modal#bank-modal .bk-view .bk-ctb *,#bank-modal#bank-modal .bk-view .bk-efh,#bank-modal#bank-modal .bk-view .bk-efh *,#bank-modal#bank-modal .bk-view .bk-el,#bank-modal#bank-modal .bk-view .bk-es,#bank-modal#bank-modal .bk-view .bk-eb,#bank-modal#bank-modal .bk-view .bk-eb *,#bank-modal#bank-modal .bk-view .bk-er,#bank-modal#bank-modal .bk-view .bk-er *,#bank-modal#bank-modal .bk-view .bk-etl,#bank-modal#bank-modal .bk-view .bk-etr,#bank-modal#bank-modal .bk-view .bk-etr *,#bank-modal#bank-modal .bk-view .bk-empty,#bank-modal#bank-modal .bk-view .bk-empty *{font-family:"UTM HelvetIns","Helvetica Neue",Helvetica,Arial,sans-serif !important}' +
-                '#bank-modal#bank-modal .bk-view .bk-ctb .bk-b,#bank-modal#bank-modal .bk-view .bk-ctb .bk-lsl,#bank-modal#bank-modal .bk-view .bk-ctb .bk-lsel{font-family:"UTM HelvetIns","Helvetica Neue",Helvetica,Arial,sans-serif !important}' +
+                '#bank-modal#bank-modal .bk-view .bk-tools,#bank-modal#bank-modal .bk-view .bk-tools *,#bank-modal#bank-modal .bk-view .bk-b,#bank-modal#bank-modal .bk-view .bk-lvh,#bank-modal#bank-modal .bk-view .bk-lvh *,#bank-modal#bank-modal .bk-view .bk-lve,#bank-modal#bank-modal .bk-view .bk-flt,#bank-modal#bank-modal .bk-view .bk-flt *,#bank-modal#bank-modal .bk-view .bk-ctb,#bank-modal#bank-modal .bk-view .bk-ctb *,#bank-modal#bank-modal .bk-view .bk-efh,#bank-modal#bank-modal .bk-view .bk-efh *,#bank-modal#bank-modal .bk-view .bk-el,#bank-modal#bank-modal .bk-view .bk-es,#bank-modal#bank-modal .bk-view .bk-eb,#bank-modal#bank-modal .bk-view .bk-eb *,#bank-modal#bank-modal .bk-view .bk-er,#bank-modal#bank-modal .bk-view .bk-er *,#bank-modal#bank-modal .bk-view .bk-etl,#bank-modal#bank-modal .bk-view .bk-etr,#bank-modal#bank-modal .bk-view .bk-etr *,#bank-modal#bank-modal .bk-view .bk-empty,#bank-modal#bank-modal .bk-view .bk-empty *{font-family:"Roboto",Arial,sans-serif !important}' +
+                '#bank-modal#bank-modal .bk-view .bk-ctb .bk-b,#bank-modal#bank-modal .bk-view .bk-ctb .bk-lsl,#bank-modal#bank-modal .bk-view .bk-ctb .bk-lsel{font-family:"Roboto",Arial,sans-serif !important}' +
                 '.bk-lvh{margin:18px 0 4px;padding:9px 14px;border-radius:12px;font-weight:900;font-size:17px;letter-spacing:.3px;color:#fff;background:#64748b}.bk-lvh span{font-weight:500;font-size:14px;opacity:.9}.bk-lvh-NB{background:linear-gradient(90deg,#0ea5e9,#0369a1)}.bk-lvh-TH{background:linear-gradient(90deg,#22c55e,#15803d)}.bk-lvh-VD{background:linear-gradient(90deg,#f59e0b,#c2410c)}.bk-lvh-VDC{background:linear-gradient(90deg,#ef4444,#991b1b)}' +
                 '.bk-vw{background:#e0f2fe;color:#075985}.bk-rm{background:#fee2e2;color:#b91c1c}.bk-q{border:1px solid #e2e8f0;border-radius:12px;padding:10px 12px;margin:8px 0;background:#fff}.bk-qh{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px;color:#334155}.bk-sp{flex:1}' +
                 '.bk-lv{background:#dbeafe;color:#1d4ed8;font-weight:900;font-size:12px;padding:2px 8px;border-radius:999px}.bk-lv.sol{background:#fef3c7;color:#92400e}.bk-qt{white-space:pre-line;font-weight:700;color:#0f172a;margin-bottom:6px;overflow-wrap:anywhere}.bk-gi{background:#fff1f2;border:1px solid #fecdd3;border-radius:8px;padding:6px 8px;margin-bottom:6px;font-size:13px;white-space:pre-line}' +
